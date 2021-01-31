@@ -6,7 +6,8 @@ import cx from 'classnames';
 
 const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
     //const cardData = data.map((data)=>data);
-    if(confirmed){
+    console.log('erwewewggg',confirmed)
+    if(!confirmed){
         return 'Loading....';
     }
     return (
@@ -16,7 +17,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
                     <CardContent >
                     <Typography  color="textSecondary" gutterBottom>Infected</Typography>
                     <Typography variant="h5">
-                    <CountUp start={0} end={confirmed.value} duration={2.5} separator=',' />
+                    <CountUp start={0} end={confirmed?.value} duration={2.5} separator=',' />
                     </Typography>
                     <Typography  color="textSecondary" >{new Date(lastUpdate).toDateString()}</Typography>
                     <Typography variant="body2">Numbber of active cases of Covid-19</Typography>
@@ -26,7 +27,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
                 <CardContent >
                     <Typography  color="textSecondary" gutterBottom>Recovered</Typography>
                     <Typography variant="h5">
-                    <CountUp start={0} end={recovered.value} duration={2.5} separator=',' />
+                    <CountUp start={0} end={recovered?.value} duration={2.5} separator=',' />
                     </Typography>
                     <Typography  color="textSecondary" >{new Date(lastUpdate).toDateString()}</Typography>
                     <Typography variant="body2">Numbber of recovered cases of Covid-19</Typography>
@@ -36,7 +37,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
                 <CardContent >
                 <Typography  color="textSecondary" gutterBottom>Deaths</Typography>
                     <Typography variant="h5">
-                    <CountUp start={0} end={deaths.value} duration={2.5} separator=',' />
+                    <CountUp start={0} end={deaths?.value} duration={2.5} separator=',' />
                     </Typography>
                     <Typography  color="textSecondary" >{new Date(lastUpdate).toDateString()}</Typography>
                     <Typography variant="body2">Numbber of deaths caused by Covid-19</Typography>
